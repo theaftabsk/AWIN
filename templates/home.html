@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWIN - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+    }
+    .banner {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 20px;
+    }
+    .user-info {
+      text-align: center;
+      margin: 15px;
+      color: #555;
+      font-size: 18px;
+    }
+    .play-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .play-section button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .play-section button:hover {
+      background-color: #218838;
+    }
+    .who-plays {
+      background: white;
+      padding: 15px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #333;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔝 Top banner (from admin panel) -->
+  <div class="banner">
+    {{ banner_text }}
+  </div>
+
+  <!-- 👤 User Info -->
+  <div class="user-info">
+    <strong>👤 {{ session['user'] }}</strong><br>
+    💰 Wallet: ₹{{ balance }}
+  </div>
+
+  <!-- 🎮 Play Game Button -->
+  <div class="play-section">
+    <button onclick="location.href='/game'">🎮 Play Game</button>
+  </div>
+
+  <!-- 🧑‍🤝‍🧑 Who wants to play section -->
+  <div class="who-plays">
+    <h3>🧑‍🤝‍🧑 Players Wanting to Play</h3>
+    <p>{{ who_plays_text }}</p>
+  </div>
+
+  <!-- 📱 Bottom Navigation -->
+  <div class="nav-bar">
+    <a href="/profile">👤 Profile</a>
+    <a href="/wallet">💼 Wallet</a>
+    <a href="/logout">🚪 Logout</a>
+  </div>
+
+</body>
+</html>
