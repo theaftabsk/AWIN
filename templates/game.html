@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWIN - Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .header {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      padding: 15px;
+      font-size: 22px;
+    }
+
+    .balance {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .add-withdraw {
+      margin: 15px 0;
+    }
+
+    .add-withdraw button {
+      padding: 8px 15px;
+      margin: 5px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .timer {
+      font-size: 26px;
+      color: #e74c3c;
+      margin: 20px 0;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      background-color: #eee;
+      padding: 20px;
+      width: 120px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .option:hover {
+      background-color: #d1ecf1;
+    }
+
+    .selected {
+      background-color: #a3e4d7 !important;
+    }
+
+    .bet-input {
+      margin-bottom: 20px;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      width: 100px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .bet-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .bet-button:hover {
+      background-color: #218838;
+    }
+
+    .winner-box {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">🎮 AWIN - Tiger vs Dragon</div>
+
+  <div class="balance">
+    💰 Your Balance: ₹{{ balance }}
+  </div>
+
+  <div class="add-withdraw">
+    <button onclick="alert('Add Money Clicked')">➕ Add Money</button>
+    <button onclick="alert('Withdraw Clicked')">💸 Withdraw</button>
+  </div>
+
+  <div class="timer" id="timer">⏳ 15</div>
+
+  <div class="options">
+    <div class="option" onclick="selectOption('tiger')" id="tiger">🐯 Tiger</div>
+    <div class="option" onclick="selectOption('dragon')" id="dragon">🐉 Dragon</div>
+  </div>
+
+  <div class="bet-input">
+    <input type="number" id="amount" placeholder="₹ Amount">
+  </div>
+
+  <button class="bet-button" onclick="placeBet()">Place Bet</button>
+
+  <div class="winner-box" id="winnerBox">
+    <!-- Winner will be shown here -->
+  </div>
+
+  <script>
+    let time = 15;
+    let timer = setInterval(() => {
+      time--;
+      document.getElementById("timer").innerText = "⏳ " + time;
+      if (time <= 0) {
+        clearInterval(timer);
+        document.getElementById("timer").innerText = "🔒 Betting Closed";
+        showWinner();
+      }
+    }, 1000);
+
+    let selected = null;
+
+    function selectOption(option) {
+      selected = option;
+      document.getElementById("tiger").classList.remove("selected");
+      document.getElementById("dragon").classList.remove("selected");
+      document.getElementById(option).classList.add("selected");
+    }
+
+    function placeBet() {
+      let amount = document.getElementById("amount").value;
+      if (!selected || !amount) {
+        alert("Please select an option and enter amount!");
+        return;
+      }
+      alert("✅ Bet placed on " + selected.toUpperCase() + " with ₹" + amount);
+    }
+
+    function showWinner() {
+      let winner = Math.random() > 0.5 ? "🐯 Tiger" : "🐉 Dragon";  // server logic later
+      document.getElementById("winnerBox").innerHTML = `🏆 Winner: <strong>${winner}</strong>`;
+    }
+  </script>
+
+</body>
+</html>
