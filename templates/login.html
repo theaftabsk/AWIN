@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWIN - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #0083b0, #00b4db);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #0083b0;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px 30px;
+      background-color: #0083b0;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #005f73;
+    }
+    .links {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .links a {
+      text-decoration: none;
+      color: #0077cc;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>🔐 Login to AWIN</h2>
+    <form method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required><br>
+      <input type="password" name="password" placeholder="Enter your password" required><br>
+      <button type="submit">🔓 Login</button>
+    </form>
+    <div class="links">
+      <p>🆕 Don't have an account? <a href="/register">Register</a></p>
+      <p>❓ Forgot password? <a href="/forgot">Reset here</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
