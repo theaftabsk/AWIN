@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWIN - Wallet</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f8ff;
+      text-align: center;
+    }
+
+    .header {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .wallet-box {
+      background-color: #fff;
+      margin: 30px auto;
+      width: 80%;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .wallet-icon {
+      font-size: 50px;
+      color: #007bff;
+    }
+
+    .balance {
+      font-size: 22px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .wallet-buttons {
+      margin-top: 20px;
+    }
+
+    .wallet-buttons button {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .wallet-buttons .add {
+      background-color: #28a745;
+    }
+
+    .wallet-buttons .withdraw {
+      background-color: #dc3545;
+    }
+
+    .wallet-buttons button:hover {
+      opacity: 0.9;
+    }
+
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav-bar a:hover {
+      color: #00b4db;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Wallet Header -->
+  <div class="header">💼 AWIN Wallet</div>
+
+  <!-- Wallet Display -->
+  <div class="wallet-box">
+    <div class="wallet-icon">💰</div>
+    <div class="balance">Balance: ₹{{ balance }}</div>
+
+    <div class="wallet-buttons">
+      <button class="add" onclick="alert('Add Money Coming Soon')">➕ Add Money</button>
+      <button class="withdraw" onclick="alert('Withdraw Coming Soon')">💸 Withdraw</button>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="nav-bar">
+    <a href="/profile">👤 Profile</a>
+    <a href="/wallet">💼 Wallet</a>
+    <a href="/home">🏠 Home</a>
+  </div>
+
+</body>
+</html>
