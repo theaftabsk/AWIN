@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWIN - Forgot Password</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff9966, #ff5e62);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .forgot-box {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .forgot-box h2 {
+      color: #ff5e62;
+      margin-bottom: 20px;
+    }
+
+    .forgot-box input[type="email"] {
+      width: 90%;
+      padding: 12px;
+      margin: 15px 0;
+      font-size: 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .forgot-box button {
+      padding: 12px 30px;
+      background-color: #ff5e62;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .forgot-box button:hover {
+      background-color: #e74c3c;
+    }
+
+    .back-link {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .back-link a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="forgot-box">
+    <h2>🔐 Forgot Password?</h2>
+    <form method="POST" action="/forgot">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <br>
+      <button type="submit">Send OTP</button>
+    </form>
+    <div class="back-link">
+      <p>Remembered? <a href="/login">Back to Login</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
