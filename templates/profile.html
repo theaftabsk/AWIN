@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWIN - Profile</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f9ff;
+      text-align: center;
+    }
+
+    .header {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      padding: 25px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .profile-box {
+      background-color: #fff;
+      margin: 30px auto;
+      width: 85%;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-icon {
+      font-size: 60px;
+      color: #007bff;
+    }
+
+    .info {
+      font-size: 18px;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .links {
+      margin: 30px 0;
+    }
+
+    .links a {
+      display: block;
+      margin: 10px auto;
+      width: 80%;
+      padding: 12px;
+      background-color: #0083b0;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .links a:hover {
+      background-color: #005f73;
+    }
+
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav-bar a:hover {
+      color: #00b4db;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">👤 {{ name }}'s Profile</div>
+
+  <!-- Profile Info -->
+  <div class="profile-box">
+    <div class="profile-icon">🙍‍♂️</div>
+    <div class="info">📧 Email: {{ session['user'] }}</div>
+    <div class="info">💰 Balance: ₹{{ balance }}</div>
+    <div class="info">✅ Status: {{ status }}</div>
+  </div>
+
+  <!-- Links -->
+  <div class="links">
+    <a href="#">📞 Customer Support</a>
+    <a href="#">📩 Contact Us</a>
+    <a href="#">ℹ️ About AWIN</a>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="nav-bar">
+    <a href="/profile">👤 Profile</a>
+    <a href="/wallet">💼 Wallet</a>
+    <a href="/home">🏠 Home</a>
+  </div>
+
+</body>
+</html>
